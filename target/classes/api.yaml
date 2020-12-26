@@ -1,0 +1,10 @@
+openapi: 3.0.0
+info:
+  description:
+    Book List Api
+  version: "1.0.0"
+  title: Book List Middleware
+
+servers:
+  - url: http://booklist.com
+

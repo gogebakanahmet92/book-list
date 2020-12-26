@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+    <module name="NewLineAtEndOfFile"/>
+    <module name="Translation"/>
+
+    <!-- Check for Size Violations -->
+    <module name="FileLength">
+        <property name="max" value="1000"/>
+    </module>
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property tabwidth="tabWidth" value="4"/>
+    </module>
+
+    <module name="UniqueProperties">
+        <property name="fileExtensions" value="yaml"/>
+    </module>
+    <module name="SuppressWarningsFilter"/>
+    <module name="TreeWalker">
+
+        <!-- Check for Naming Conventions -->
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="MethodTypeParameterName"/>
+        <module name="OuterTypeFileName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+
+        <!-- Check for imports -->
+        <module name="AvoidStartImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImport"/>
+
+        <!-- Check for Size Violations -->
+        <module name="MethodLength"/>
+        <module name="ParameterNumber">
+            <property name="max" value="12"/>
+        </module>
+
+        <!-- Check for whitespace -->
+        <module name="EmptyForInitializerPad"/>
+        <module name="EmptyForIteratorPad"/>
+        <module name="GenericWhiteSpace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhiteSpaceAfter"/>
+        <module name="NoWhiteSpaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhiteSpaceAfter"/>
+        <module name="WhiteSpaceAround"/>
+        <module name="EmptyLineSeperator">
+            <property name="allowMultipleEmptyLines" value="false"/>
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+        </module>
+
+        <!-- Modifier Checks -->
+        <module name="DeclarationOrder"/>
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Check for blocks -->
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="NestedForDepth">
+            <property name="max" value="2"/>
+        </module>
+        <module name="NesteIfDepth">
+            <property name="max" value="2"/>
+        </module>
+        <module name="NestedTryDepth"/>
+        <module name="RightCurly"/>
+        <module name="Indentation">
+            <property name="tabWidth" value="4"/>
+        </module>
+
+        <!-- Check for common coding problems -->
+        <module name="BooleanExpressionComplexity"/>
+        <module name="CovariantEquals"/>
+        <module name="CyclomaticComplextiy">
+            <property name="max" value="7"/>
+        </module>
+        <module name="DefaultComesLast"/>
+        <module name="EmptyStatement"/>
+        <module name="EqualsAvoidNull"/>
+        <module name="EqualHashCode"/>
+        <module name="ExecutableStatementCount">
+            <property name="max" value="50"/>
+        </module>
+        <module name="FallThrough"/>
+        <module name="HiddenField"/>
+        <module name="IllegalCatch">
+            <property name="illegalClassNames" value="java.lang.Error, java.lang.Throwable, java.lang.RuntimeException"/>
+        </module>
+        <module name="IllegalInstantiation"/>
+        <module name="IllegalThrows"/>
+        <module name="InnerAssignment"/>
+        <module name="JavaNCSS">
+            <property name="methodMaximum" value="150"/>
+            <property name="classMaximum" value="1000"/>
+            <property name="fileMaximum" value="1000"/>
+        </module>
+        <module name="MagicNumber"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="ModifiedControlVariable"/>
+        <module name="MultipleStringLiterals"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="NPathComplexity"/>
+        <module name="NoClone"/>
+        <module name="NoFinalizer"/>
+        <module name="OneStatementPerLine"/>
+        <module name="ReturnCount"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="SuperClone"/>
+        <module name="SuperFinalize"/>
+
+        <!-- Check for class design -->
+        <module name="AnonInnerLength">
+            <property name="max" value="10"/>
+        </module>
+        <module name="ClassDataAbstractionCoupling">
+            <property name="excluedClassesRegexeps" value=".*Exceptions$"/>
+        </module>
+        <module name="ClassFanOutComplexity">
+            <property name="max" value="50"/>
+        </module>
+        <module name="ClassTypeParameterName"/>
+        <module name="DesignForExtension">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="FinalClass"/>
+        <module name="InnerTypeLast"/>
+        <module name="InterfaceIsType"/>
+        <module name="MethodCount">
+            <property name="maxTotal" value="30"/>
+        </module>
+        <module name="MutableException"/>
+        <module name="VisibilityModifier"/>
+
+        <!-- Miscellaneous other checks -->
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters"/>
+        <module name="FinalLocalVariableCheck"/>
+        <module name="OuterTypeNumber"/>
+        <module name="ParameterAssignment"/>
+        <module name="TodoComment"/>
+        <module name="UpperEll"/>
+        <module name="UnnecessaryParanthesis"/>
+
+        <!-- Make the @SuppressWarnings annotations available on CheckStyle -->
+        <module name="SuppressWarningsHolder"/>
+    </module>
+</module>
