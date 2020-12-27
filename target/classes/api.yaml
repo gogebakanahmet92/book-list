@@ -1,10 +1,123 @@
 openapi: 3.0.0
 info:
   description:
-    Book List Api
+    Book List API
   version: "1.0.0"
   title: Book List Middleware
 
 servers:
   - url: http://booklist.com
 
+paths:
+  /check-duplication:
+    post:
+      tags:
+        - CheckDuplication
+      summary: Check Customer Duplication
+      operationId: checkDuplication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckDuplicationRequest'
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckDuplicationResponse'
+        default:
+          description: Exception Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExceptionResponse'
+
+components:
+  schemas:
+
+    Response:
+      type: object
+      required:
+        - result
+      properties:
+        result:
+          $ref: '#/components/schemas/Result'
+        message:
+          type: string
+          description: Result message
+          example: Your transaction has been completed
+        sessionId:
+          type: string
+          description: Unique identifier of the user session
+          example: 02600000015131111
+
+    ExceptionResponse:
+      type: object
+      required:
+        - result
+      properties:
+        timestamp:
+          type: string
+          pattern: "DD-MM-YYYY HH:MI:SS"
+          example: 19-09-2020 16:58:36
+        result:
+          $ref: '#/components/schemas/Result'
+        error:
+          $ref: '#/components/schemas/Error'
+
+    Error:
+      type: object
+      properties:
+        errorId:
+          type: integer
+          format: int32
+          description: Unique identifier of the error message
+          example: 300041
+        errorMessage:
+          type: string
+          description: Description of the error message
+          example: Incorrect Login, Password.
+        errorType:
+          $ref: '#/components/schemas/ErrorType'
+
+    CheckDuplicationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Customer name
+          example: Ahmet
+        surname:
+          type: string
+          description: Customer surname
+          example: Gogebakan
+        cnp:
+          type: string
+          description: Customer cnp
+          example: 1234567890123
+
+    CheckDuplicationResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Response'
+        - properties:
+            isDuplicate:
+              type: boolean
+              description: check for duplication
+              example: true
+
+    Result:
+      type: string
+      enum:
+        - OK
+        - ERROR
+
+    ErrorType:
+      type: string
+      enum:
+        - CORE_ERROR
+        - MIDDLEWARE_ERROR
+        - AUTHENTICATION_ERROR

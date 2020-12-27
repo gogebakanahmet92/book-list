@@ -1,0 +1,12 @@
+com/ahmetgogebakan/booklist/swaggergen/model/CheckDuplicationResponse.class
+com/ahmetgogebakan/booklist/swaggergen/model/Error.class
+com/ahmetgogebakan/booklist/swaggergen/model/Result.class
+com/ahmetgogebakan/booklist/swaggergen/model/Response.class
+com/ahmetgogebakan/booklist/swaggergen/controller/ApiUtil.class
+com/ahmetgogebakan/booklist/swaggergen/model/ExceptionResponse.class
+com/ahmetgogebakan/booklist/swaggergen/controller/CheckDuplicationApi.class
+com/ahmetgogebakan/booklist/BookListApplication.class
+com/ahmetgogebakan/booklist/swaggergen/model/ErrorType.class
+com/ahmetgogebakan/booklist/swaggergen/model/CheckDuplicationResponseAllOf.class
+com/ahmetgogebakan/booklist/swaggergen/model/CheckDuplicationRequest.class
+com/ahmetgogebakan/booklist/controller/CheckDuplicationController.class
